@@ -62,3 +62,9 @@ typings/
 
 .token
 .temp
+
+# python
+bin
+include
+lib
+pip-selfcheck.json
