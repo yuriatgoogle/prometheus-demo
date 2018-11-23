@@ -1,4 +1,4 @@
-from prometheus_client import start_http_server, Summary, Gauge, Counter
+from prometheus_client import start_http_server, Summary, Gauge, Counter, MetricsHandler
 import random
 import time
 
@@ -8,7 +8,7 @@ g = Gauge('random_value', 'randomly set gauge value')
 
 if __name__ == '__main__':
     # Start up the server to expose the metrics.
-    start_http_server(8000)
+    start_http_server(8000) # prometheus http server
     # Generate some requests.
     while True: # on every request
         c.inc() # increment the counter
