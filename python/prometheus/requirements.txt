@@ -10,7 +10,7 @@ chardet==3.0.4
 click==6.7
 configparser==3.5.0
 enum34==1.1.6
-Flask==0.12.2
+Flask>=0.12.3
 Flask-WTF==0.14.2
 futures==3.2.0
 google==2.0.1
@@ -43,7 +43,7 @@ pylint==1.8.3
 pyparsing==2.0.1
 python-dateutil==1.5
 pytz==2018.3
-requests==2.18.4
+requests>=2.20.0
 rsa==3.4.2
 scipy==1.1.0
 singledispatch==3.4.0.3
