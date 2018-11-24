@@ -11,6 +11,7 @@ app = Flask(__name__)
 @app.route("/")
 def incCounter():
     c.inc()
+    return "metrics page"
 
 
 if __name__ == "__main__":
