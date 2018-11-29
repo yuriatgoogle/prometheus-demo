@@ -7,15 +7,17 @@ import time
 import datetime
 
 app = Flask(__name__)
-LATENCY = Gauge('flask_request_latency', 'request latency')
+RANDOM_VALUE = Gauge('random_value', 'randomly generated')
 
-@LATENCY.time()
+
 @app.route('/')
 def homePage():
+    RANDOM_VALUE.set(random.random())
     return ("home page")
 
 @app.route('/stats', methods=['GET'])
 def metrics():
+    RANDOM_VALUE.set(random.random())
     return generate_latest(REGISTRY), 200
 
 if __name__ == '__main__':
