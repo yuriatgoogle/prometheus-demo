@@ -8,10 +8,6 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
-var (
-	projectID = "yuri-next2019"
-)
-
 func main() {
 
 	log.Printf("main function")
@@ -21,7 +17,5 @@ func main() {
 }
 
 func handle(w http.ResponseWriter, r *http.Request) {
-	log.Printf("[golang-profiler:handle] Entered")
 	fmt.Fprintln(w, "hello!")
-	log.Printf("[golang-profiler:handle] Exited")
 }
