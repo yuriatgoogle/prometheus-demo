@@ -1,10 +1,7 @@
 from flask import Flask
-from prometheus_client import start_http_server, Summary, Gauge, generate_latest, REGISTRY
-import logging
+from prometheus_client import Summary, Gauge, Counter, generate_latest, REGISTRY, Histogram
 import random
-import string
-import time
-import datetime
+
 
 app = Flask(__name__)
 RANDOM_VALUE = Gauge('random_value', 'randomly generated')
@@ -16,8 +13,7 @@ def homePage():
     return ("home page")
 
 @app.route('/stats', methods=['GET'])
-def metrics():
-    RANDOM_VALUE.set(random.random())
+def stats():
     return generate_latest(REGISTRY), 200
 
 if __name__ == '__main__':
