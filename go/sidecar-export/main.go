@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"net/http"
 
-	log "github.com/Sirupsen/logrus"
+	"./collector"
 
+	log "github.com/Sirupsen/logrus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 )
 
@@ -21,5 +22,6 @@ func main() {
 
 func handleMain(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "Welcome to the home page")
+	collector.fooMetric.inc()
 
 }
