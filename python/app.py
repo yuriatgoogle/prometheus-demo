@@ -12,7 +12,7 @@ def homePage():
     RANDOM_VALUE.set(random.random())
     return ("home page")
 
-@app.route('/stats', methods=['GET'])
+@app.route('/metrics', methods=['GET'])
 def stats():
     return generate_latest(REGISTRY), 200
 
