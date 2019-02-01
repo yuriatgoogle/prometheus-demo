@@ -4,12 +4,12 @@ import random
 
 
 app = Flask(__name__)
-RANDOM_VALUE = Gauge('random_value', 'randomly generated')
+PYTHON_RANDOM_VALUE = Gauge('python_random_value', 'randomly generated in Python')
 
 
 @app.route('/')
 def homePage():
-    RANDOM_VALUE.set(random.random())
+    PYTHON_RANDOM_VALUE.set(random.random())
     return ("home page")
 
 @app.route('/metrics', methods=['GET'])
