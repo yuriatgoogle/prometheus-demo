@@ -6,11 +6,11 @@ metadata:
   creationTimestamp: 2018-11-29T01:30:55Z
   generation: 1
   labels:
-    run: prometheus-demo-go
-  name: prometheus-demo-go
+    run: prometheus-demo-node
+  name: prometheus-demo-node
   namespace: default
   resourceVersion: "1220091"
-  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/prometheus-demo-go
+  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/prometheus-demo-node
   uid: 6adb9339-f376-11e8-8bdb-42010a8a0039
 spec:
   progressDeadlineSeconds: 600
@@ -18,7 +18,7 @@ spec:
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      run: prometheus-demo-go
+      run: prometheus-demo-node
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -28,16 +28,16 @@ spec:
     metadata:
       annotations:
         prometheus.io/scrape: "true"      # must be quoted
-        prometheus.io/port: "8081" # must be quoted
+        prometheus.io/port: "8082" # must be quoted
         prometheus.io/path: "/metrics"      # it defaults to /metrics
       creationTimestamp: null
       labels:
-        run: prometheus-demo-go
+        run: prometheus-demo-node
     spec:
       containers:
-      - image: gcr.io/stack-doctor/prometheus-demo-go:latest
+      - image: gcr.io/yuri-next2019/prometheus-demo-node:latest
         imagePullPolicy: Always
-        name: prometheus-demo-go
+        name: prometheus-demo-node
         resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
