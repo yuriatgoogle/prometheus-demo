@@ -5,16 +5,16 @@ const sleep = require('sleep');
 const collectDefaultMetrics = prometheus.collectDefaultMetrics;
 
 // define golden signal metrics
-// failed requests - counter
-const nodeFailedRequestsCounter = new prometheus.Counter({
-    name: 'node_failed_requests',
-    help: 'failed requests'
-});
-
 // total requests - counter
 const nodeRequestsCounter = new prometheus.Counter({
     name: 'node_requests',
     help: 'total requests'
+});
+
+// failed requests - counter
+const nodeFailedRequestsCounter = new prometheus.Counter({
+    name: 'node_failed_requests',
+    help: 'failed requests'
 });
 
 // latency - histogram
