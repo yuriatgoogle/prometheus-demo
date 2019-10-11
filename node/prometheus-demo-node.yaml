@@ -35,7 +35,7 @@ spec:
         run: prometheus-demo-node
     spec:
       containers:
-      - image: gcr.io/yuri-next2019/prometheus-demo-node:latest
+      - image: gcr.io/prometheus-demo-node:latest
         imagePullPolicy: Always
         name: prometheus-demo-node
         resources: {}
@@ -46,22 +46,3 @@ spec:
       schedulerName: default-scheduler
       securityContext: {}
       terminationGracePeriodSeconds: 30
-status:
-  availableReplicas: 1
-  conditions:
-  - lastTransitionTime: 2018-11-29T01:30:55Z
-    lastUpdateTime: 2018-11-29T01:31:36Z
-    message: ReplicaSet "prometheus-demo-67c97d76c6" has successfully progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
-  - lastTransitionTime: 2018-11-29T17:41:53Z
-    lastUpdateTime: 2018-11-29T17:41:53Z
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: "True"
-    type: Available
-  observedGeneration: 1
-  readyReplicas: 1
-  replicas: 1
-  updatedReplicas: 1
