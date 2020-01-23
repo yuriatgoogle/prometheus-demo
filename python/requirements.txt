@@ -49,7 +49,7 @@ scipy==1.1.0
 singledispatch==3.4.0.3
 six==1.11.0
 tornado==5.0.2
-urllib3==1.22
+urllib3==1.24.2
 uWSGI==2.0.17.1
 virtualenv==15.2.0
 Werkzeug==0.15.3
