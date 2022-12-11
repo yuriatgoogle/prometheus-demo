@@ -9,7 +9,7 @@
   "author": "thegrinch@google.com",
   "license": "Apache-2.0",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "prom-client": "^11.5.3",
     "sleep": "^6.1.0"
   }
